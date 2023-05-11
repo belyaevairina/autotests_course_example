@@ -7,7 +7,7 @@ def create_phone_number(num_tuple):
     row_str = ''
     for i in num_tuple:
         row_str += str(i)
-    str_phone = (f'({row_str[:3]}) {row_str[3:6]}-{row_str[6:]}')
+    str_phone = f'({row_str[:3]}) {row_str[3:6]}-{row_str[6:]}'
     return str_phone
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
