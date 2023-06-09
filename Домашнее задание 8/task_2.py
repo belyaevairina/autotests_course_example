@@ -21,14 +21,14 @@ class Trigon:
     def __init__(self, *sides):
         self.sides = sides
 
+        if len(self.sides) != 3:
+            raise IndexError(f"Передано {len(self.sides)} аргументов, а ожидается 3")
+
         for side in self.sides:
             if not isinstance(side, int):
                 raise TypeError('Стороны должны быть числами')
             if side <= 0:
                 raise ValueError('Стороны должны быть положительными')
-
-        if len(self.sides) != 3:
-            raise IndexError(f"Передано {len(self.sides)} аргументов, а ожидается 3")
 
         if self.sides[0] + self.sides[1] <= self.sides[2] or self.sides[0] + self.sides[2] <= self.sides[1] or self.sides[1] + self.sides[2] <= self.sides[0]:
             raise Exception("Не треугольник")
